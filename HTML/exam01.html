@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML연습</title>
+    <style>
+        div {
+            border: 1px solid red;
+        } 
+
+        span {
+            border:1px dotted blue;
+            font-weight: bold;
+            color : 000000; /* 검정색 */
+            font-style: italic;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>안녕하세요.</h1>
-    <h3>안녕하세요</h3>
-    <h6>안녕하세요</h6>
-
+    
     <!-- font 태그 사용법 -->
     <div>
         <font size="1">크기=1</font><br />
@@ -21,13 +31,33 @@
 
     <!-- font 태그 중첩 사용 -->
     <div>
-        <font size="3" color="#003300" face="굴림">
+        <font size="3" color="#00ff00" face="굴림">
             폰트태그는
             <font size="5" color="#ff0000" face="궁서">중첩사용</font>
             도 가능합니다.
         </font>
     </div>
     <hr>
+
+    <!-- 글자의 모양 -->
+    <div>
+        <strong>글자를 굵게 표시합니다.</strong>
+        <br>
+        <u>글자에 밑줄을 표시합니다.</u>
+        <br>
+        <i>글자를 기울임 표시합니다.</i>
+        <br>
+        <strong><u><i>글자의 모양을 의미하는 태그 역시 중첩이 가능합니다.</i></u></strong>
+    </div>
+    <hr>
+
+    <!-- 단어나 문장의 영억 지정 -->
+    <div>
+        <span style="color:red;">SPAN</span> 태그는
+        <span>문장 단위로 텍스트 영역을 지정하는 것</span>인데,
+        그 자체로는 아무 역할도 하지않고,
+        문장의 특정 구역에 <span>CSS스타일</span>을 지정할 때 사용합니다.
+    </div>
 
 </body>
 </html>
