@@ -49,4 +49,5 @@ SELECT
 FROM
     employees
 WHERE
-    hire_date between '2005-01-01' and '2005-12-31';
+--    hire_date between '2005-01-01' and '2005-12-31';
+    to_char(hire_date, 'yyyy') = '2005';
