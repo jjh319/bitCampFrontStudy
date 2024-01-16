@@ -14,3 +14,39 @@ SELECT
 FROM
     employees;
     
+--문제3)
+SELECT
+    first_name || ' ' || last_name AS "사원명",
+    '$' || salary AS "월급",
+    department_id
+FROM
+    employees
+WHERE
+    department_id = 90;
+    
+--문제4)
+SELECT
+    last_name AS "이름",
+    job_id AS "업무ID",
+    salary || '원'
+FROM
+    employees
+WHERE
+    job_id in( 'SA_REP' , 'AD_PRES') AND
+    salary > 10000;
+    
+--문제5)
+SELECT DISTINCT
+    job_id AS "업무ID"
+FROM
+    employees;
+    
+--문제6)
+SELECT
+    employee_id AS "사원번호",
+    first_name || ' ' || last_name AS "이름",
+    hire_date AS "입사일"
+FROM
+    employees
+WHERE
+    hire_date between '2005-01-01' and '2005-12-31';
