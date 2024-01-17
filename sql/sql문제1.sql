@@ -51,3 +51,30 @@ FROM
 WHERE
 --    hire_date between '2005-01-01' and '2005-12-31';
     to_char(hire_date, 'yyyy') = '2005';
+    
+
+SELECT last_name, department_id, hire_date
+FROM employees
+ORDER BY 2 DESC;
+
+SELECT last_name, department_id, hire_date
+FROM employees
+ORDER BY 2 DESC, 3 ASC;
+
+SELECT employee_id, last_name, department_id
+FROM employees
+WHERE lower(last_name) = 'higgins';
+
+SELECT mod(10,3) FROM dual;
+
+SELECT round(35765.357,2) FROM dual;
+
+SELECT round(35765.357,-2) FROM dual;
+
+
+
+
+
+
+
+
