@@ -82,7 +82,7 @@ SELECT
 FROM
     employees
 WHERE
-    substr(concat(first_name, last_name), -1) = 'n';
+    substr(last_name,-1,1) = 'n';
 
 
 
