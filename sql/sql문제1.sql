@@ -84,6 +84,30 @@ FROM
 WHERE
     substr(last_name,-1,1) = 'n';
 
+SELECT sysdate FROM dual;
+
+-- 문제3)
+SELECT
+    last_day(sysdate) - sysdate AS "이번 달 말까지 남은 일"
+FROM
+    dual;
 
 
+-- 문제4)
+SELECT
+    LAST_NAME,
+    to_char(hire_date,'DD"-"fmMM"월 -"YYYY') AS "HIRE_DATE"
+FROM
+    employees
+WHERE
+    hire_date < '2005-01-01';
+    
 
+-- 문제5)
+SELECT
+    count(employee_id) AS " 커미션을 받지 않은 사원 수"
+FROM
+    employees
+WHERE
+    commission_pct is null;
+ 
