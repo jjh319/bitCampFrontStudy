@@ -53,6 +53,7 @@ WHERE
     to_char(hire_date, 'yyyy') = '2005';
     
 
+-- 2일차 --
 SELECT last_name, department_id, hire_date
 FROM employees
 ORDER BY 2 DESC;
@@ -71,9 +72,17 @@ SELECT round(35765.357,2) FROM dual;
 
 SELECT round(35765.357,-2) FROM dual;
 
+SELECT concat('Hello', ' World') FROM dual;
 
-
-
+-- 문제2)
+SELECT
+    employee_id,
+    concat(first_name, last_name) AS "NAME",
+    length(concat(first_name ,last_name)) AS "LENGTH"
+FROM
+    employees
+WHERE
+    substr(concat(first_name, last_name), -1) = 'n';
 
 
 
