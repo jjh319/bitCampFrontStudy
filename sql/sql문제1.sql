@@ -77,8 +77,8 @@ SELECT concat('Hello', ' World') FROM dual;
 -- 문제2)
 SELECT
     employee_id,
-    concat(first_name, last_name) AS "NAME",
-    length(concat(first_name ,last_name)) AS "LENGTH"
+    concat(first_name || ' ', last_name) AS "NAME",
+    length(concat(first_name || ' ',last_name)) AS "LENGTH"
 FROM
     employees
 WHERE
