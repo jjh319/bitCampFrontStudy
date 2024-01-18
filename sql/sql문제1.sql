@@ -160,10 +160,31 @@ FROM
     employees;
 
 
+-- 문제1)
+SELECT
+    job_id,
+    sum(salary) AS "급여합계"
+FROM
+    employees
+GROUP BY
+    job_id;
+
+SELECT department_id, max(salary) AS max_salary
+FROM employees
+GROUP BY department_id
+HAVING department_id in(10,20,30)
+ORDER BY department_id ASC;
 
 
-
-
+-- 프로그래머스 문제)
+SELECT
+    sum(price) AS "판매액"
+FROM
+    SELLINGS
+GROUP BY
+    created_at
+HAVING
+    created_at in('2016-11');
 
 
 
