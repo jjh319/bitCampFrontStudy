@@ -116,11 +116,48 @@ WHERE
 -- 3일차 --
 
 
+SELECT job_id, decode(job_id,
+                        'SA_MAN','Sales Dept',
+                        'SA_REP','Sales Dept',
+                        'Another') AS "분류"
+FROM employees
+ORDER BY 2;
+
+SELECT count(distinct department_id) FROM employees;
+
+--문제6)
+SELECT
+    employee_id AS "사원번호",
+    last_name AS "사원명",
+    case when salary < 10000 then '초급'
+         when salary < 20000 then '중급'
+         else '고급'
+         end "구분"
+FROM
+    employees
+ORDER BY
+    salary desc, last_name desc;
+    
+SELECT rank(3000) within group(ORDER BY salary desc) AS "rank" FROM employees;
 
 
+-- 문제7)
+SELECT
+    employee_id AS "사원번호",
+    last_name AS "이름",
+    '$' || to_char((salary * 12 + (salary*12*nvl(commission_pct,0))),'9,999,999') AS "연봉",
+    commission_pct AS "커미션"
+FROM
+    employees;
 
 
-
+-- 문제8)
+SELECT
+    employee_id AS "사원번호",
+    last_name AS "이름",
+    nvl(manager_id,1000) AS "매니저ID"
+FROM
+    employees;
 
 
 
