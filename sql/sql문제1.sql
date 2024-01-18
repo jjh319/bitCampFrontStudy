@@ -111,3 +111,27 @@ FROM
 WHERE
     commission_pct is null;
  
+ 
+ 
+-- 3일차 --
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
