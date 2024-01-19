@@ -206,9 +206,30 @@ FROM
     departments JOIN locations using(location_id);
 
 
+-- 문제3)
+SELECT
+    last_name AS 사원이름,
+    city AS 도시,
+    department_name AS 부서이름
+FROM
+    employees
+    join departments using(department_id)
+    join locations using(location_id);
 
-
-
+-- 문제4)
+SELECT
+    employee_id AS 사원번호,
+    last_name AS 사원이름,
+    department_name AS 부서이름,
+    city AS 도시,
+    street_address AS 도시주소,
+    country_name AS 나라이름
+FROM
+    employees
+    JOIN departments using(department_id)
+    JOIN locations using(location_id)
+    JOIN countries using(country_id);
+    
 
 
 
