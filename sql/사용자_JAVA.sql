@@ -7,7 +7,7 @@ FROM
 GROUP BY
     major
 HAVING
-    major in('생물','물리','유공','식영');
+    major != '화학';
     
 SELECT
     major,
