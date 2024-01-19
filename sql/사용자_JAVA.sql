@@ -37,8 +37,8 @@ SELECT
     c.cno,
     c.cname
 FROM
-    professor p
-    JOIN course c ON p.pno = c.pno
+    professor p JOIN course c
+    ON p.pno = c.pno
 WHERE
     c.cname LIKE '%화학';
 
