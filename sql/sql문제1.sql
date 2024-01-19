@@ -187,6 +187,39 @@ HAVING
     created_at in('2016-11');
 
 
+-- 4일차)
+
+-- 문제2)
+SELECT
+    department_id,
+    city
+FROM
+    departments d,
+    locations l
+WHERE
+    d.location_id = l.location_id;
+
+SELECT
+    department_id,
+    city
+FROM
+    departments JOIN locations using(location_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
