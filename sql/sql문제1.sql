@@ -214,7 +214,12 @@ SELECT
 FROM
     employees
     join departments using(department_id)
-    join locations using(location_id);
+    join locations using(location_id)
+WHERE
+    city in('Seattle','Oxford')
+ORDER BY
+    city;
+
 
 -- 문제4)
 SELECT
@@ -226,11 +231,15 @@ SELECT
     country_name AS 나라이름
 FROM
     employees
-    JOIN departments using(department_id)
+    LEFT JOIN departments using(department_id)
     JOIN locations using(location_id)
-    JOIN countries using(country_id);
-    
-
+    JOIN countries using(country_id)
+WHERE
+    street_address LIKE '%Ch%' or
+    street_address LIKE '%Sh%' or
+    street_address LIKE '%Rd%'
+ORDER BY
+    country_name asc, city asc;
 
 
 
