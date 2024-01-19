@@ -47,6 +47,25 @@ WHERE
 
 
 
+-- 문제 3)
+SELECT
+    st.sno,
+    st.sname,
+    st.major,
+    st.syear,
+    sc.cno,
+    co.cname,
+    sc.result
+FROM
+    student st,
+    score sc,
+    course co
+WHERE
+    st.sno = sc.sno AND
+    sc.cno = co.cno AND
+    major = '화학' AND
+    st.syear = 1;
+
 
 
 
