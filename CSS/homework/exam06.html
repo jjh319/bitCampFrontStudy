@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            width: 200px;
+            height: 300px;
+        }
+
+        #img {
+            background-image: url(../image/back.png);
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+
+        #img:hover {
+            background-image: url(../image/front.png);
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>:hover 활용</h3>
+    <hr>
+    <table>
+        <tr>
+            <td>마우스를 올리면 카드의 앞면이 보인다.</td>
+            <td><div id="img"></div></td>
+        </tr>
+    </table>
+</body>
+</html>
