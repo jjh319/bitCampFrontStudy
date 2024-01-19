@@ -29,8 +29,11 @@ SELECT
     cname
 FROM
     professor
-    JOIN course  using(pno);
-  
+    JOIN course  using(pno)
+WHERE
+    pname = '송강';
+
+
 SELECT
     p.pno,
     p.pname,
