@@ -244,14 +244,43 @@ ORDER BY
 
 -- 5일차 --
 
+SELECT e.last_name, d.department_id, d.department_name
+FROM employees e, departments d
+WHERE e.department_id = d.department_id(+);
+
+SELECT last_name, department_id,department_name
+FROM employees
+left join departments using(department_id);
 
 
+SELECT last_name, department_id,department_name
+FROM employees
+right join departments using(department_id);
 
+SELECT last_name, department_id, department_name
+FROM employees
+full join departments using(department_id);
 
+create table salgrade(
+salvel varchar2(2),
+lowst number,
+highst number);
 
+insert into salgrade values('A',20000, 29999);
+insert into salgrade values('B',10000, 19999);
+insert into salgrade values('C',0, 9999);
+commit;
 
+SELECT last_name, salary, salvel
+FROM employees
+join salgrade on(salary between lowst and highst)
+ORDER BY salary DESC;
 
-
+SELECT e.employee_id AS 사원번호,
+       e.last_name AS 사원이름,
+       m.last_name AS 관리자
+FROM employees e
+JOIN employees m on(m.employee_id = e.manager_id);
 
 
 
