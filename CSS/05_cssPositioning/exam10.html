@@ -18,6 +18,16 @@
             height: 100%;
             object-fit: cover; /*  상위 div에 맞게 들어가도록 설정*/
         }
+
+        .imgDiv:hover img {
+            transform: scale(1.4);
+        }
+
+        .imgDiv img {
+            /* 애니메이션 효과 - 마우스 오버 시 이미지가 즉시 커지지 않고
+                30.5초에 걸쳐서 커진다. */
+            transition: all 0.35s linear;
+        }
     </style>
 </head>
 <body>
