@@ -65,6 +65,9 @@ WHERE
     sc.cno = co.cno AND
     major = '화학' AND
     st.syear = 1;
+    
+    
+
 
 
 

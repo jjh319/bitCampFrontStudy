@@ -242,6 +242,8 @@ ORDER BY
     country_name asc, city asc;
 
 
+-- 5일차 --
+
 
 
 
