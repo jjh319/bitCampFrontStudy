@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 70px;
+            padding: 10px;
+            border:10px solid gold;
+            background-image: url("../image/spongebob.png");
+            background-size: 150px 100px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .redBox {
+            box-shadow: 10px 10px red;
+        }
+
+        .blueBox {
+            box-shadow: 10px 10px 5px skyblue;
+        }
+
+        .multiple {
+            box-shadow: 2px 2px 2px black,
+                        0 0 25px blue,
+                        0 0 5px darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h3>박스 그림자 만들기</h3>
+    <hr>
+    <div class="redBox">뚱이와 함께</div><br>
+    <div class="blueBox">뚱이와 함께</div><br>
+    <div class="multiple">뚱이와 함께</div>
+</body>
+</html>
