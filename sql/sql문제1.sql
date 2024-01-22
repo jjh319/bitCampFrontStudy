@@ -325,8 +325,22 @@ FROM
     employees_role
 WHERE
     job_id in('IT_PROG');
+    
+SELECT last_name, job_title
+FROM employees
+join jobs using(job_id)
+WHERE job_title in('Stock Manager', 'Programmer');
 
-
+SELECT last_name, job_title
+FROM employees
+join jobs using(job_id)
+WHERE job_title='Stock Manager'
+union
+SELECT last_name, job_title
+FROM employees
+join jobs using(job_id)
+WHERE job_title='Programmer'
+ORDER BY job_title asc;
 
 
 
