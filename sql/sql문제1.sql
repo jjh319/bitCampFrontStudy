@@ -393,8 +393,31 @@ WHERE
 ORDER BY
     salary DESC;
     
-    
+SELECT employee_id AS 사원번호,
+       last_name AS 이름,
+       CASE
+            WHEN employee_id in(SELECT manager_id FROM employees) then '관리자'
+            ELSE '직원'
+            END AS 구분
+FROM employees
+ORDER BY 3,1;
 
+
+-- 문제4)
+SELECT
+    last_name AS 사원이름,
+    job_id AS 업무ID,
+    job_title AS 직무,
+    '$' || to_char(trunc(salary,-3),'9,999,999') AS 급여
+FROM
+    employees JOIN jobs using(job_id)
+WHERE
+    (job_id,salary) in ( SELECT job_id, trunc(AVG(salary),-3)
+    FROM employees
+    GROUP BY job_id
+    )
+ORDER BY
+    salary DESC;
 
 
 
