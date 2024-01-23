@@ -391,7 +391,7 @@ WHERE
     AND
     salary >= any(SELECT max(salary) FROM employees WHERE job_id='IT_PROG')
 ORDER BY
-    salary ASC;
+    salary DESC;
     
     
 
