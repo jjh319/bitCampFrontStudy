@@ -389,7 +389,7 @@ FROM
 WHERE
     (job_id = 'FI_ACCOUNT' OR job_id = 'SA_REP')
     AND
-    salary > any(SELECT max(salary) FROM employees WHERE job_id='IT_PROG')
+    salary >= any(SELECT max(salary) FROM employees WHERE job_id='IT_PROG')
 ORDER BY
     salary ASC;
     
