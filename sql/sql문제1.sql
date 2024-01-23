@@ -342,6 +342,55 @@ join jobs using(job_id)
 WHERE job_title='Programmer'
 ORDER BY job_title asc;
 
+-- 5일차 -- 
+SELECT department_name
+FROM departments
+WHERE department_id = (SELECT department_id FROM employees WHERE first_name='Neena');
+
+SELECT last_name, department_id, salary
+FROM employees
+WHERE department_id = (SELECT department_id FROM employees WHERE first_name='Neena')
+    AND salary > (SELECT salary FROM employees WHERE first_name='Neena');
+    
+-- 문제 1)
+SELECT
+    last_name,
+    salary
+FROM
+    employees
+WHERE
+    salary = (SELECT min(salary) FROM employees);
+    
+-- 문제2)
+SELECT
+    department_name,
+    sum(salary)
+FROM
+    employees JOIN departments using(department_id)
+GROUP BY
+    department_name
+HAVING
+    sum(salary) = (SELECT max(sum(salary)) FROM employees GROUP BY department_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
