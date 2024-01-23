@@ -373,6 +373,29 @@ HAVING
     sum(salary) = (SELECT max(sum(salary)) FROM employees GROUP BY department_id);
 
 
+SELECT last_name, job_id, salary
+FROM employees
+WHERE job_id = 'IT_PROG'
+      AND
+      salary > any(SELECT salary FROM employees WHERE job_id='ST_MAN');
+      
+-- 문제3)
+SELECT
+    last_name AS 사원명,
+    job_id AS 업무ID,
+    to_char((salary*1380),'99,999,999') || '원' AS 급여
+FROM 
+    employees
+WHERE
+    (job_id = 'FI_ACCOUNT' OR job_id = 'SA_REP')
+    AND
+    salary > any(SELECT max(salary) FROM employees WHERE job_id='IT_PROG')
+ORDER BY
+    salary ASC;
+    
+    
+
+
 
 
 
