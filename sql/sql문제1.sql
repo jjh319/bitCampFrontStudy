@@ -436,6 +436,40 @@ marriage char(1) default 'N' check(marriage in('Y','N')));
 INSERT INTO user1(idk,id,name,phone,address,score,subject_code,hire_date,marriage)
 VALUES(1,'aaa','kim','010-0000-0000','서울',75,100,'2010-08-01','Y');
 
+select * FROM user1;
+
+alter table user1 rename to user2;
+
+desc user2;
+
+alter table user2 drop column address;
+
+create table book(
+no number primary key,
+subject varchar2(50),
+price number,
+year date);
+
+create sequence no_seq nocycle nocache;
+
+insert into book(no, subject, price, year)
+values (no_seq.nextval,'오라클 무작정 따라하기',10000,sysdate);
+
+select * from book;
+
+select constraint_name, constraint_type, search_condition
+from user_constraints
+where table_name='USER2';
+
+create table dept(
+deptno number constraint DNO primary key,
+dname varchar2(30) constraint DNAME not null);
+
+create table emp(
+empno number constraint ENO primary key,
+ename varchar2(30) constraint ENAME not null,
+deptno number, constraint FKNO foreign key(deptno) 
+references dept on delete set null);
 
 
 
