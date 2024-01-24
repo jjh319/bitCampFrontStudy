@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Hello JavaScript!!</h1>
+
+    <script>
+        document.write("안녕 자바스크립트!!");
+    </script>
+
+</body>
+</html>
+
+<!-- 
+    HTML 페이지의 <body> 태그 안을 document(문서)라고 부른다.
+    Document document;
+
+- <body> 안에 새로운 내용을 출력
+  document.write("출력할 내용");
+- <body> 태그 안에 출력되는 내용이므로, 다른 HTML 태그를 포함하여 출력할 수 있다.
+ -->
+
+<!-- 
+    JavaScript 기본동작
+
+(1) 역사
+   네스케이프사가 사이트의 처리능력을 높이기 위해 개발한 스크립트 언어
+   처음엔 Live Script라고 발표되었다가 선마이크로시스템의 자바의 기능을 결합
+   자바스크립드라 부르게 되었다.
+   * 스크립트란? 
+     컴파일되지 않고 Application이 실행되는 동안 Line 단위로 해석되는 명령어나 문장들의 집합
+
+(2) 특징
+   - 브라우저 안에서만 쓰이는 언어
+   - Html태그로는 부족한 동적인 효과를 내준다.
+   - Html태그에 쓰이는 명령어를 다시 응용해서 사용하게 된다.
+
+(3) 자바와 자바스크립트의 차이
+  - 자바스크립트 : 넷스케이프에서 제작. 특별한 개발환경이 없다.
+                  Client-side-script(클라이언트인 브라우저에서 소스 자체가 해석된다.)
+                  객체기반(Based)언어. 단 클래스를 지원하지 않는다.
+                  자료형을 따로 선언할 필요가 없다.
+                  동적Binding, 실행 시 객체 참조가 체크 된다.
+
+  - 자바 : 선마이크로시스템에서 제작. Visual J++이나 Visual Cafe, Latte의 개발환경
+           Server-side-script(서버에서 먼저 컴파일되고 그 코드를 클라이언트에서 해석한다.)
+           객체지향(Orented)언어. 자바애플릿은 클래스의 상속을 지원한다.
+           자료형을 반드시 선언해야 한다.
+           정적Binding. 컴파일 시 객체참조가 체크 된다.
+
+(4) 기본구조
+    <script type="text/javascript">   스크립트의 종류 표기
+        소스코드                              
+    </script>
+
+(5) 주석문 : 프로그램 실행에는 아무런 영향을 미치지 않는다.
+  //      한 줄 주석
+  /*   */ --- 두 줄 이상의 주석 : debuging의 용도로도 쓰임   
+       
+(6) HTML문서내에서의 위치
+   가급적 <HEAD>...</HEAD> 사이에 위치하는 것이 좋다
+   그러나, 페이지내 다른 객체와 어울려 작동 시 또는 HEAD에서는 작동하지 않는 경우
+   BODY의 어떤 곳에도 사용 가능
+
+(7) 스크립트문 작성 시 주의점
+  - 대소문자를 구분한다.
+  - 한 line (실행단위)을 끝내려면 ;(세미콜론)으로 닫아준다.
+      --- 요즘은 ;없이도 enter로 line구분이 가능하게 되었다.
+  - 한 줄에 2문장을 기술할 때는 ;를 생략할 수 없다.
+ -->
