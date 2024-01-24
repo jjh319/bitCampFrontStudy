@@ -7,5 +7,20 @@
 </head>
 <body>
     
+    <script>
+        // 재할당 안된다. let처럼 구역 단위
+        const a = 100;
+        // a = 250;
+        console.log(a)
+        {
+            let a = 200;
+            console.log(a) // 200
+            {
+                let a = 300;
+                console.log(a) // 300
+            }
+           
+        }
+    </script>
 </body>
 </html>
