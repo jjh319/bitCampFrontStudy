@@ -420,9 +420,21 @@ ORDER BY
     salary DESC;
 
 
+-- 6일차 --
 
+create table user1(
+idk number primary key,
+id varchar2(10) unique,
+name varchar2(10) not null,
+phone varchar2(15),
+address varchar2(50),
+score number(6,2) check(score >= 0 and score <= 100),
+subject_code number(5),
+hire_date date default sysdate,
+marriage char(1) default 'N' check(marriage in('Y','N')));
 
-
+INSERT INTO user1(idk,id,name,phone,address,score,subject_code,hire_date,marriage)
+VALUES(1,'aaa','kim','010-0000-0000','서울',75,100,'2010-08-01','Y');
 
 
 
