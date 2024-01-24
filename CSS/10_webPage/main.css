@@ -127,6 +127,7 @@ hr {
 /* container start */
 #container {
     background: url("../image/bg_snb.png") repeat-y 170px 0; /* 가로위치 세로위치 */
+    padding-bottom: 20px;
 }
 
 /* snb start */
@@ -195,6 +196,36 @@ hr {
     color:#666666;
     word-spacing: 0em;
 }
+
+
+#content h2 {
+    padding: 24px 0;
+    color:#005B9B;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#content .thum {
+    float: left;
+    margin-left: 14px;
+}
+
+#content .thum img {
+    width: 114px;
+    height: 111px;
+    border: 1px solid #cccccc;
+}
+
+#content .text {
+    margin-left: 148px;
+}
+
+#content .text p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
 /* content end */
 
 #container::after {
@@ -206,5 +237,40 @@ hr {
 
 
 /* footer start */
+#footer {
+    border-top: 1px solid #cccccc;
+    padding: 18px 30px 40px 20px;
+    color: #666;
+    font-size: 0.9em;
+}
 
+#footer:after {
+    content: '';
+    display: block;
+    clear:both;
+}
+
+.btmnav {
+    float: right;
+}
+
+.btmnav dd {
+    float: left;
+}
+
+.btmnav dd::after {
+    content: '|';
+    padding: 0 0.7em;
+    color:#999;   
+}
+
+.btmnav dd:last-child:after {
+    content: '';
+    padding: 0;
+}
+
+.copy {
+    float: left;
+    line-height: 1.8;
+}
 /* footer end */
