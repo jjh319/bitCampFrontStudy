@@ -539,6 +539,7 @@ CREATE table bookorder(
 idx number primary key,
 isbn varchar2(10),
 constraint FKISBN foreign key(isbn) references bookshop on delete set null,
+-- isbn varchar2(10) constraint FKISBN references bookshop(isbn),
 qty number);
 
 create sequence idx_seq nocycle nocache;
@@ -565,12 +566,14 @@ AS
 SELECT
     title,
     author,
-    to_char(qty*price,'9,999,999')
+    to_char(sum(qty*price),'9,999,999')
 FROM
     bookshop JOIN bookorder using(isbn)
 GROUP BY
-    title, qty*price
+    title , author
 WITH READ ONLY;
+
+SELECT * FROM bs_view ORDER BY 총판매금액 DESC;
 
 
 
