@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myid {
+            background-color: #ff0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="myid">안녕하세요.</h1>
+    <h1 class="myid">자바스크립트 입니다.</h1>
+    <h1 class="myid">강의 참 재미있죠?</h1>
+    <a href="#" onclick="doPrint()">자바스크립트 함수 호출하기</a>
+    
+    <script>
+        function doPrint() {
+            var myTags = document.getElementsByClassName("myid");
+            console.log("myTags = " + myTags);
+
+            for(var i=0; i<myTags.length; i++) {
+                myTags[i].innerHTML = "스크립트가 실행되었습니다.";
+            } // for
+
+        } // doPrint
+    </script>
+</body>
+</html>
+
+<!--
+    속성 class="" 로 지정된 태그 얻어오기
+    1. getElementsByClassName()
+    - HTMLCollection 타입 리턴
+
+    2. querySelector()
+    - 1개
+    - 파라메터로 CSS 선택자를 넣어준다.
+
+    3. querySelectorAll()
+    - 여러개
+    - 파라메터로 CSS 선택자를 넣어준다.
+    - NodeList 타입
+-->
