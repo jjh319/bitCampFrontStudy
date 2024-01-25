@@ -488,7 +488,34 @@ WHERE salary between 5000 AND 10000;
 
 SELECT * FROM v_view2 ORDER BY 급여;
 
+update v_view2 set 급여=12000 WHERE 사원ID=103;
+commit;
 
+
+-- 문제2)
+CREATE OR REPLACE VIEW v_view3(사원번호,사원명,부서명)
+AS SELECT employee_id, last_name, department_name
+FROM employees JOIN departments using(department_id)
+WHERE department_id = 10 OR department_id = 90;
+
+SELECT * FROM v_view3 ORDER BY 사원번호;
+
+-- 문제3)
+CREATE OR REPLACE VIEW v_view4(사원번호,사원명,급여,입사일,부서명,부서위치)
+AS SELECT employee_id,last_name,salary,hire_date,department_name,city
+FROM employees JOIN departments using(department_id) JOIN locations using(location_id);
+
+SELECT
+    사원번호,
+    사원명,
+    to_char(trunc(급여,-3),'9,999,999') || '원' AS 급여,
+    to_char(입사일,'YYYY"년" MM"월" DD"일"') AS 입사일,
+    부서명,
+    부서위치 
+FROM
+    v_view4
+ORDER BY
+    사원번호;
 
 
 
