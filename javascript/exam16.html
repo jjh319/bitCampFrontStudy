@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 onmouseover=""
+    <h1 onmouseover="showResult()" onmouseout="hideResult()" style="border:1px solid red;">
+        10 + 50 = <span id="question">?</span>
+    </h1>
+    <p>결과를 보시려면 수식 위에 마우스를 올리세요.</p>
+
+    <script>
+        function sum(x,y) {
+            return x+y;
+        } // sum
+
+        function showResult() {
+            var result = sum(10,50);
+
+            var myTag = document.getElementById('question');
+            myTag.innerHTML = "<font color='red'>" + result + "</font>";
+        } // showResult
+
+        function hideResult() {
+            var result2 = "?";
+            var myTag2 = document.getElementById('question');
+            myTag2.innerHTML = result2;
+        } // hideResult
+    </script>
 </body>
 </html>
