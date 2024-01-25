@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function doPrint(num) {
+            var msg = "doPrint()가 " + num + "회 실행되었습니다.";
+            alert(msg);
+            document.getElementById("myId").innerHTML = msg;
+        }
+
+        doPrint(1); // 호출
+    </script>
 </head>
 <body>
-    
+    <script>
+        doPrint(2);
+    </script>
+
+    <h1 id="myId">안녕하세요.</h1>
+
+    <script>
+        doPrint(3);
+    </script>
 </body>
 </html>
