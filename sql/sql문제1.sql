@@ -518,11 +518,59 @@ ORDER BY
     사원번호;
 
 
+-- 문제4) 
+create table bookshop(
+isbn varchar2(10) constraint PISBN primary key,
+title varchar2(50) constraint CTIT NOT NULL,
+author varchar2(50),
+price number,
+company varchar2(30));
 
+INSERT INTO bookshop(isbn,title,author,price,company)
+VALUES ('is001','자바3일완성','김자바',25000,'야메루출판사');
 
+INSERT INTO bookshop(isbn,title,author,price,company)
+VALUES ('pa002','JSP달인되기','이달인',28000,'공갈닷컴');
 
+INSERT INTO bookshop(isbn,title,author,price,company)
+VALUES ('or003','오라클무작정따라하기','박따라',23500,'야메루출판사');
 
+CREATE table bookorder(
+idx number primary key,
+isbn varchar2(10),
+constraint FKISBN foreign key(isbn) references bookshop on delete set null,
+qty number);
 
+create sequence idx_seq nocycle nocache;
+
+INSERT INTO bookorder(idx,isbn,qty)
+VALUES (idx_seq.nextval,'is001',2);
+
+INSERT INTO bookorder(idx,isbn,qty)
+VALUES (idx_seq.nextval,'or003',3);
+
+INSERT INTO bookorder(idx,isbn,qty)
+VALUES (idx_seq.nextval,'pa002',5);
+
+INSERT INTO bookorder(idx,isbn,qty)
+VALUES (idx_seq.nextval,'is001',3);
+
+INSERT INTO bookorder(idx,isbn,qty)
+VALUES (idx_seq.nextval,'or003',10);
+
+SELECT * FROM bookorder;
+
+CREATE OR REPLACE VIEW bs_view(책제목,저자,총판매금액)
+AS 
+SELECT
+    title,
+    author,
+    to_char(qty*price,'9,999,999')
+FROM
+    bookshop JOIN bookorder using(isbn)
+GROUP BY
+    title, qty*price
+WITH READ ONLY;
 
 
 
