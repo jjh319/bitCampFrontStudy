@@ -472,6 +472,44 @@ deptno number, constraint FKNO foreign key(deptno)
 references dept on delete set null);
 
 
+-- 7일차 --
+CREATE OR REPLACE VIEW v_view1
+AS SELECT employee_id, last_name, department_id
+FROM employees
+WHERE department_id = 90;
+
+SELECT * FROM v_view1;
+
+-- 문제1)
+CREATE OR REPLACE VIEW v_view2
+AS SELECT employee_id AS 사원ID, last_name AS 사원이름, salary AS 급여, department_id AS 부서ID
+FROM employees
+WHERE salary between 5000 AND 10000;
+
+SELECT * FROM v_view2 ORDER BY 급여;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
