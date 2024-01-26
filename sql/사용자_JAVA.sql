@@ -69,6 +69,19 @@ WHERE
 
 --------------------------
 
+-- 기말고사 평균 60점 이상인 학생의 정보를 구하시오.
+SELECT
+    SNO,
+    SNAME,
+    avg(RESULT)
+FROM
+    student JOIN score using(sno)
+GROUP BY
+    SNO,SNAME
+HAVING
+    avg(RESULT) >= 60;
+    
+
 
     
 
