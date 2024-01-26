@@ -590,14 +590,38 @@ SELECT * FROM
 SELECT
     last_name AS 사원이름,
     department_name AS 부서명,
-    TO_CHAR(NVL(salary,0) * 12,'FM999,999,999') AS 연봉
+    TO_CHAR(NVL(salary,0) * 12 * nvl(커미션,1),'FM999,999,999') AS 연봉
 FROM
     (SELECT rownum, ceil(rownum/5) AS page, tt.* FROM
-    (SELECT last_name, department_name, nvl(salary,0) AS salary
+    (SELECT last_name, department_name, nvl(salary,0) AS salary ,commission_pct as 커미션 
     FROM employees JOIN departments using(department_id)
     ORDER BY salary asc) tt)
 WHERE
     page = 1;
+    
+SELECT *
+FROM (SELECT rownum rn, AA.*
+FROM (SELECT last_name AS 사원이름,
+    department_name AS 부서명,
+    TO_CHAR(NVL(salary,0) * 12 * nvl(commission_pct,1),'FM999,999,999') AS 연봉
+    FROM employees JOIN departments using(department_id)
+    ORDER BY salary asc) AA)
+WHERE rn < 6;
+    
+    
+-- 문제5)
+SELECT 부서명, 최대급여
+FROM (
+SELECT department_name AS 부서명, max(salary) AS 최대급여
+FROM employees JOIN departments using(department_id)
+GROUP BY department_name);
+
+SELECT last_name AS 이름,
+       department_name AS 부서명,
+       salary AS 급여
+FROM employees JOIN departments using(department_id)
+WHERE (department_id, salary)
+    IN (SELECT department_id,max(salary) FROM employees GROUP BY department_id);
     
 
 
