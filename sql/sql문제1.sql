@@ -576,6 +576,29 @@ WITH READ ONLY;
 SELECT * FROM bs_view ORDER BY 총판매금액 DESC;
 
 
+-- 8일차 --
+SELECT rownum, last_name, salary
+FROM (SELECT last_name, nvl(salary,0) AS salary FROM employees ORDER BY 2 desc)
+WHERE rownum <= 3;
+
+SELECT * FROM
+(SELECT rownum, ceil(rownum/5) AS page, tt.* FROM
+(SELECT last_name, nvl(salary,0) AS salary FROM employees ORDER BY salary asc) tt);
+
+
+-- 문제6)
+SELECT
+    last_name AS 사원이름,
+    department_name AS 부서명,
+    TO_CHAR(NVL(salary,0) * 12,'FM999,999,999') AS 연봉
+FROM
+    (SELECT rownum, ceil(rownum/5) AS page, tt.* FROM
+    (SELECT last_name, department_name, nvl(salary,0) AS salary
+    FROM employees JOIN departments using(department_id)
+    ORDER BY salary asc) tt)
+WHERE
+    page = 1;
+    
 
 
 
