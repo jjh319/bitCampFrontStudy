@@ -624,7 +624,9 @@ WHERE (department_id, salary)
     IN (SELECT department_id,max(salary) FROM employees GROUP BY department_id);
     
 
+------------------------
 
+grant all on employees to c##java;
 
 
 

@@ -122,6 +122,14 @@ WHERE A.PNO = B.PNO AND A.RESULT > (
                                 HAVING C.CNAME = '핵화학'
                                );   
 
+------------------------------------
+
+create synonym hr_emp for hr.employees;
+
+SELECT * FROM hr.employees;
+
+DROP synonym hr_emp;
+
 
 
 
