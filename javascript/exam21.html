@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 배열 생성
+        // var myArray1 = ["홍길동", "자바스크립트", "학생"];
+        var myArray1 = new Array("홍길동", "자바스크립트", "학생");
+
+        document.write(myArray1[0] + "<br>");
+        document.write(myArray1[1] + "<br>");
+        document.write(myArray1[2] + "<br>");
+        document.write("<hr>");
+
+        myArray1[0] = "HongGilDong";
+        myArray1[1] = "JavaScript";
+        myArray1[2] = "Student";
+
+        document.write(myArray1[0] + "<br>");
+        document.write(myArray1[1] + "<br>");
+        document.write(myArray1[2] + "<br>");
+        document.write("<hr>");
+
+        // 빈 배열 생성
+        // var myArray2 = [];
+        var myArray2 = new Array();
+
+        for(var i=0; i<10; i++) {
+            myArray2[i] = i+1;
+        } // for
+
+        document.write("배열 길이 : " + myArray2.length + "<br>");
+        for(var i=0; i<myArray2.length; i++) {
+            document.write(myArray2[i] + " ");
+        } // for
+
+    </script>
+</body>
+</html>
