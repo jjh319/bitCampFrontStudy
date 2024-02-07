@@ -1,95 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        #box {
-            background: #98bf21;
-            height: 100px;
-            width: 100px;
-            position: absolute; /* 부모 div 영역 밖으로 밀려 나간다 */
-            left: 0;
-        }
-
+      #box {
+        background: #98bf21;
+        height: 100px;
+        width: 100px;
+        position: absolute; /* 부모 div 영역 밖으로 밀려 나간다 */
+        left: 0;
+      }
     </style>
-
-</head>
-<body>
+  </head>
+  <body>
     <h1>Animate</h1>
-    <button>
-        Reset
-    </button>
+    <button>Reset</button>
 
-    <button>
-        Ani1
-    </button>
+    <button>Ani1</button>
 
-    <button>
-        Ani2
-    </button>
+    <button>Ani2</button>
 
-    <button>
-        Ani3
-    </button>
+    <button>Ani3</button>
 
-    <button>
-        Ani4
-    </button>
+    <button>Ani4</button>
 
-    <div id="animation-area" style="border: 1px solid red;">
-        <div id="box"></div>
+    <div id="animation-area" style="border: 1px solid red">
+      <div id="box"></div>
     </div>
-
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
-        $(function(){
-            $('button:eq(0)').click(function() {
-                $('#animation-area').html('<div id="box"></div>')
-            })
-
-            // 좌측으로부터 250px 만큼 div 이동
-            $('button:eq(1)').click(function() {
-                $('#box').animate({ // css 속성을 json 형식으로 표기
-                    'left': '250px'
-                }, 1000, 'swing',function() { alert('애니메이션을 종료')})
-            })
-
-            // 좌측으로부터 250px 만큼 div 이동, 높이 너비 150px에 하기
-            $('button:eq(2)').click(function() {
-                $('#box').animate({ // css 속성을 json 형식으로 표기
-                    'left': '250px',
-                    'width': '150px',
-                    'height': '150px'
-                }, 1000, 'swing',function() { alert('애니메이션을 종료')})
-            })
-
-            // 좌측으로부터 50px 이동하고, 높이 너비 50px 크게
-            $('button:eq(3)').click(function() {
-                $('#box').animate({ // css 속성을 json 형식으로 표기
-                    'left': '+=50px',
-                    'width': '+=100px',
-                    'height': '+=100px',
-
-                }, 1000, 'swing',function() { alert('애니메이션을 종료')})
-            })
-
-            $('button:eq(4)').click(function() {
-                var div = $('#box')
-
-                div.animate({ height: '300px'}, 1000)
-                div.animate({ width: '300px'}, 500)
-                div.animate({ height: '100px'}, 800)
-                div.animate({ width: '100px'}, 300)
-            })
-
+      $(function () {
+        $("button:eq(0)").click(function () {
+          $("#animation-area").html('<div id="box"></div>');
         });
 
-    </script>
+        // 좌측으로부터 250px 만큼 div 이동
+        $("button:eq(1)").click(function () {
+          $("#box").animate(
+            {
+              // css 속성을 json 형식으로 표기
+              left: "250px",
+            },
+            1000,
+            "swing",
+            function () {
+              alert("애니메이션을 종료");
+            }
+          );
+        });
 
-</body>
+        // 좌측으로부터 250px 만큼 div 이동, 높이 너비 150px에 하기
+        $("button:eq(2)").click(function () {
+          $("#box").animate(
+            {
+              // css 속성을 json 형식으로 표기
+              left: "250px",
+              width: "150px",
+              height: "150px",
+            },
+            1000,
+            "swing",
+            function () {
+              alert("애니메이션을 종료");
+            }
+          );
+        });
+
+        // 좌측으로부터 50px 이동하고, 높이 너비 50px 크게
+        $("button:eq(3)").click(function () {
+          $("#box").animate(
+            {
+              // css 속성을 json 형식으로 표기
+              left: "+=50px",
+              width: "+=100px",
+              height: "+=100px",
+            },
+            1000,
+            "swing",
+            function () {
+              alert("애니메이션을 종료");
+            }
+          );
+        });
+
+        $("button:eq(4)").click(function () {
+          var div = $("#box");
+
+          div.animate({ height: "300px" }, 1000);
+          div.animate({ width: "300px" }, 500);
+          div.animate({ height: "100px" }, 800);
+          div.animate({ width: "100px" }, 300);
+        });
+      });
+    </script>
+  </body>
 </html>
 
 <!-- 
