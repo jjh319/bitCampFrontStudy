@@ -4,43 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
 </head>
 <body>
     <p><a href="#">Link</a></p>
 
-    <input type="checkbox" name="" id="check" checked>체크박스
+    <input type="checkbox" name="" id="check" checked="checked"/>
 
     <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
     <script>
-        $(function() {
-            console.log('attr = ' + $('a').attr('href'))
-            console.log('prop = ' + $('a').prop('href'))
+        $(function(){
+            console.log('attr = ' + $('a').attr('href'));
+            console.log('prop = ' + $('a').prop('href'));
 
             var check = $('#check');
-            console.log('check : ' + check)
-            console.log('check : ' + check.prop('tagName'));
-            console.log('attr : ' + check.attr('checked'));
-            console.log('prop : ' + check.prop('checked'));
+            console.log('check = ' + check);  //[object Object]
+            console.log('check = ' + check.prop('tagName'));  //INPUT
+
+            console.log('attr = ' + check.attr('checked'));  //checked
+            console.log('prop = ' + check.prop("checked"));  //true
 
             var check2 = document.querySelector('#check');
-            console.log('attr = ' + check2.getAttribute('checked'));
-        })
-
-        /*
-            .hasAttribute(name) —> 속성의 존재 확인
-            .getAttribute(name) — 속성값을 가져온다
-            .setAttribute(name, value) — 속성값을 변경
-            .removeAttribute(name) — 속성값을 제거
-	    */
-
+            console.log('attr = ' + check2.getAttribute('checked'));  // getAttribute => attr로 변형된것임
+        });
     </script>
-
-    
-
 </body>
 </html>
-
 <!-- 
 attr() / prop()
 jQuery 1.6버전 이전에는 attr() 만으로 가능하던 처리를 1.6 업데이트로 attr()과 prop() 으로 나뉘어졌다.
@@ -69,5 +57,3 @@ $("요소").attr({
 .prop("속성이름")        → 속성값을 가져온다
 .prop("속성이름", "값")   → 속성값을 추가한다
  -->
-
- 
