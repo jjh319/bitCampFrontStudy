@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #252422;
+      }
+
+      ul {
+        padding: 0;
+        margin: 50px auto;
+        list-style: none;
+        width: 800px;
+      }
+
+      .title {
+        padding: 0;
+        margin: 0;
+      }
+
+      .title > a {
+        display: block;
+        padding-top: 12px;
+        font-size: 14px;
+        text-indent: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        height: 23px;
+        background: url("../image/background.jpg");
+      }
+
+      .selected {
+        background: url("../image/background-selected.jpg") !important;
+      }
+
+      .content {
+        margin: 0;
+        background: #d4d0c8;
+        padding: 10px;
+        height: 200px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="collapsible">
+        <h2 class="title"><a href="../txt/html5.txt">HTML5</a></h2>
+        <p class="content"></p>
+      </li>
+
+      <li class="collapsible">
+        <h2 class="title"><a href="../txt/jquery.txt">jQuery</a></h2>
+        <p class="content"></p>
+      </li>
+
+      <li class="collapsible">
+        <h2 class="title"><a href="../txt/bootstrap.txt">Bootstrap3</a></h2>
+        <p class="content"></p>
+      </li>
+    </ul>
+
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        // 탭의 내용은 첫 번째 항목 안의 <a>태그가 가리키는 txt 파일을 읽어와서 출력
+        $(".collapsible:eq(0) > .content").load(
+          $(".collapsible:eq(0) .title a").attr("href")
+        );
+
+        // 첫 번째 항목의 <a>에게 class="selected" 속성을 적용
+        $(".collapsible:eq(0) > .title > a").addClass("selected");
+
+        // 첫 번째 항목을 뺀 content 숨기기
+        $(".collapsible").not(":eq(0)").find(".content").hide();
+
+        $(".collapsible .title a").click(function () {
+          $(this).toggleClass("selected");
+
+          $(".collapsible .title a").not(this).removeClass("selected");
+
+          var target = $(this).parent().next();
+
+          var other = $(".content").not(target);
+
+          target.slideToggle(300);
+          other.slideUp(300);
+
+          if (target.css("display") != "none") {
+            target.load($(this).attr("href"));
+          } // if
+
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+$().css('display')
+=> display 속성은 요소를 어떻게 보여줄지를 결정한다
+
+① none : 보이지 않음
+② block
+③ inline
+④ inline-block
+ -->
